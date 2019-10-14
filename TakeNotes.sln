@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TakeNotes", "TakeNotes\TakeNotes.csproj", "{C92C1285-84E0-4B31-96FE-EE3C6E5E8001}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeechRecognitionService", "SpeechService\SpeechRecognitionService.csproj", "{5582E2ED-A668-4329-9B51-85FD4A970DD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C92C1285-84E0-4B31-96FE-EE3C6E5E8001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92C1285-84E0-4B31-96FE-EE3C6E5E8001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C92C1285-84E0-4B31-96FE-EE3C6E5E8001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C92C1285-84E0-4B31-96FE-EE3C6E5E8001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5582E2ED-A668-4329-9B51-85FD4A970DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5582E2ED-A668-4329-9B51-85FD4A970DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5582E2ED-A668-4329-9B51-85FD4A970DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5582E2ED-A668-4329-9B51-85FD4A970DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D789F026-3F14-40C7-B7DF-464AA745A658}
+	EndGlobalSection
+EndGlobal
