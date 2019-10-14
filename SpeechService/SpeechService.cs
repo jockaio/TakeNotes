@@ -21,12 +21,19 @@ namespace SpeechRecognitionService
         {
             _speechRecognizer.SpeechStartDetected += _speechRecognizer_SpeechStartDetected;
             _speechRecognizer.Recognized += _speechRecognizer_Recognized;
+            _speechRecognizer.SpeechEndDetected += _speechRecognizer_SpeechEndDetected;
             await _speechRecognizer.StartContinuousRecognitionAsync();
+        }
+
+        private void _speechRecognizer_SpeechEndDetected(object sender, RecognitionEventArgs e)
+        {
+            Console.WriteLine($"---- End of taking notes. ----");
         }
 
         public async Task<List<ReconizedSpeech>> StopSpeechRecognition()
         {
             await _speechRecognizer.StopContinuousRecognitionAsync();
+            _speechRecognizer.Dispose();
             return _reconizedSpeeches;
         }
 
@@ -37,12 +44,15 @@ namespace SpeechRecognitionService
             // Checks result.
             if (result.Reason == ResultReason.RecognizedSpeech)
             {
-                Console.WriteLine($"- {result.Text}");
-                _reconizedSpeeches.Add(
-                    new ReconizedSpeech
-                    {
-                        Result = result.Text
-                    });
+                if (!String.IsNullOrWhiteSpace(result.Text))
+                {
+                    Console.WriteLine($"- {result.Text}");
+                    _reconizedSpeeches.Add(
+                        new ReconizedSpeech
+                        {
+                            Result = result.Text
+                        });
+                }
             }
             else if (result.Reason == ResultReason.NoMatch)
             {
@@ -64,7 +74,7 @@ namespace SpeechRecognitionService
 
         private void _speechRecognizer_SpeechStartDetected(object sender, RecognitionEventArgs e)
         {
-            Console.WriteLine("Start of speech recognized.");
+            Console.WriteLine("---- Taking notes ----");
         }
     }
 }
